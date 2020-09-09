@@ -10,6 +10,9 @@ import UIKit
 
 class StartViewController: UIViewController {
 
+    @IBOutlet weak var randomToastView: CircleView!
+    
+    
     var toastsViewController: ToastsViewController!
     var visualEffectView: UIVisualEffectView!
     

@@ -15,6 +15,7 @@
 		1109859624FFF3D600C7B73F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1109859424FFF3D600C7B73F /* LaunchScreen.storyboard */; };
 		11322FA2250633AD005F78E6 /* CardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11322FA1250633AD005F78E6 /* CardState.swift */; };
 		11322FA4250633F8005F78E6 /* ToastsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11322FA3250633F8005F78E6 /* ToastsViewController.xib */; };
+		11731B062508F24200AB9342 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11731B052508F24200AB9342 /* CircleView.swift */; };
 		11788A7E2500F0FE0012D22C /* ToastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11788A7D2500F0FE0012D22C /* ToastsViewController.swift */; };
 		117C63BE2503CB21005299AD /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C63BD2503CB21005299AD /* UIStoryboard+Extensions.swift */; };
 		11A261EE2500015C001C4AE1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A261ED2500015C001C4AE1 /* UIView+Extensions.swift */; };
@@ -31,6 +32,7 @@
 		1109859724FFF3D600C7B73F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11322FA1250633AD005F78E6 /* CardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardState.swift; sourceTree = "<group>"; };
 		11322FA3250633F8005F78E6 /* ToastsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastsViewController.xib; sourceTree = "<group>"; };
+		11731B052508F24200AB9342 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		11788A7D2500F0FE0012D22C /* ToastsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsViewController.swift; sourceTree = "<group>"; };
 		117C63BD2503CB21005299AD /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		11A261ED2500015C001C4AE1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		1109858824FFF3D100C7B73F /* Toaster */ = {
 			isa = PBXGroup;
 			children = (
+				11731B042508F22200AB9342 /* Views */,
 				11322FA02506339B005F78E6 /* Enums */,
 				11A261EC2500014A001C4AE1 /* Extensions */,
 				1109858924FFF3D100C7B73F /* AppDelegate.swift */,
@@ -85,6 +88,14 @@
 				11322FA1250633AD005F78E6 /* CardState.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		11731B042508F22200AB9342 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11731B052508F24200AB9342 /* CircleView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		11A261EB2500008A001C4AE1 /* ViewControllers */ = {
@@ -178,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11731B062508F24200AB9342 /* CircleView.swift in Sources */,
 				117C63BE2503CB21005299AD /* UIStoryboard+Extensions.swift in Sources */,
 				1109858E24FFF3D100C7B73F /* StartViewController.swift in Sources */,
 				1109858A24FFF3D100C7B73F /* AppDelegate.swift in Sources */,
