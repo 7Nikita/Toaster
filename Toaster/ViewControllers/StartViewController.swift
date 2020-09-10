@@ -19,10 +19,8 @@ class StartViewController: UIViewController {
     let cardHeight: CGFloat = 600
     let cardHandleAreaHeight: CGFloat = 80
     
-    var cardVisible = false
-    var nextState: CardState {
-        return cardVisible ? .collapsed : .expanded
-    }
+    
+    var cardState: CardState = .collapsed
     
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted: CGFloat = 0
@@ -46,30 +44,19 @@ class StartViewController: UIViewController {
         
         toastsViewController.view.clipsToBounds = true
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleCardTap(recognzier:)))
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleCardPan(recognizer:)))
         
-        toastsViewController.handleView.addGestureRecognizer(tapGestureRecognizer)
         toastsViewController.handleView.addGestureRecognizer(panGestureRecognizer)
     }
     
-    @objc func handleCardTap(recognzier: UITapGestureRecognizer) {
-        switch recognzier.state {
-        case .ended:
-            animateTransitionIfNeeded(state: nextState, duration: 0.9)
-        default:
-            break
-        }
-    }
-    
-    @objc func handleCardPan (recognizer: UIPanGestureRecognizer) {
+    @objc func handleCardPan(recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .began:
-            startInteractiveTransition(state: nextState, duration: 0.9)
+            startInteractiveTransition(state: cardState.oppositeState, duration: 0.9)
         case .changed:
             let translation = recognizer.translation(in: self.toastsViewController.handleView)
             var fractionComplete = translation.y / cardHeight
-            fractionComplete = cardVisible ? fractionComplete : -fractionComplete
+            fractionComplete = cardState == .expanded ? fractionComplete : -fractionComplete
             updateInteractiveTransition(fractionCompleted: fractionComplete)
         case .ended:
             continueInteractiveTransition()
@@ -79,7 +66,7 @@ class StartViewController: UIViewController {
         
     }
     
-    func animateTransitionIfNeeded (state: CardState, duration: TimeInterval) {
+    func animateTransitionIfNeeded(state: CardState, duration: TimeInterval) {
         if runningAnimations.isEmpty {
             let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
                 switch state {
@@ -91,25 +78,12 @@ class StartViewController: UIViewController {
             }
             
             frameAnimator.addCompletion { _ in
-                self.cardVisible = !self.cardVisible
+                self.cardState = self.cardState.oppositeState
                 self.runningAnimations.removeAll()
             }
             
             frameAnimator.startAnimation()
             runningAnimations.append(frameAnimator)
-            
-            
-            let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
-                switch state {
-                case .expanded:
-                    self.toastsViewController.view.layer.cornerRadius = 12
-                case .collapsed:
-                    self.toastsViewController.view.layer.cornerRadius = 0
-                }
-            }
-            
-            cornerRadiusAnimator.startAnimation()
-            runningAnimations.append(cornerRadiusAnimator)
             
             let blurAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
                 switch state {
@@ -122,7 +96,6 @@ class StartViewController: UIViewController {
             
             blurAnimator.startAnimation()
             runningAnimations.append(blurAnimator)
-            
         }
     }
     
