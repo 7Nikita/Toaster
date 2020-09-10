@@ -9,4 +9,9 @@
 enum CardState {
     case expanded
     case collapsed
+    
+    var oppositeState: CardState {
+        return self == .expanded ? .collapsed : .expanded
+    }
+    
 }
