@@ -36,7 +36,7 @@ class StartViewController: UIViewController {
         visualEffectView.frame = self.view.frame
         self.view.addSubview(visualEffectView)
         
-        toastsViewController = ToastsViewController(nibName: "ToastsViewController", bundle:nil)
+        toastsViewController = ToastsViewController(nibName: "ToastsViewController", bundle: nil)
         self.addChild(toastsViewController)
         self.view.addSubview(toastsViewController.view)
         
@@ -109,7 +109,7 @@ class StartViewController: UIViewController {
         }
     }
     
-    func updateInteractiveTransition(fractionCompleted:CGFloat) {
+    func updateInteractiveTransition(fractionCompleted: CGFloat) {
         for animator in runningAnimations {
             animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
         }
