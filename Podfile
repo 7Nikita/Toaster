@@ -6,7 +6,10 @@ target 'Toaster' do
   use_frameworks!
 
   # Pods for Toaster
-  
+
   # add pods for desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
+  pod 'Firebase/Core'
+  pod ‘Firebase/Storage’
+  pod ‘Firebase/Database’
 end
