@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToastsViewController" customModule="Toaster" customModuleProvider="target">
             <connections>
                 <outlet property="handleView" destination="LEK-br-hrw" id="hrd-2j-8ue"/>
+                <outlet property="toastsTableView" destination="2QS-Xq-ZHG" id="BJK-lv-9Ad"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4c1-hU-i2g"/>
             </connections>
         </placeholder>
@@ -25,15 +26,23 @@
                         <constraint firstAttribute="height" constant="80" id="yMV-jk-728"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2QS-Xq-ZHG">
+                    <rect key="frame" x="0.0" y="80" width="414" height="782"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2QS-Xq-ZHG" secondAttribute="trailing" id="ClG-d7-UeQ"/>
                 <constraint firstItem="LEK-br-hrw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LBe-xn-oXH"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LEK-br-hrw" secondAttribute="trailing" id="LhV-JZ-FZl"/>
+                <constraint firstItem="LEK-br-hrw" firstAttribute="bottom" secondItem="2QS-Xq-ZHG" secondAttribute="firstBaseline" id="VzM-Lp-LIv"/>
+                <constraint firstItem="2QS-Xq-ZHG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="dEU-3o-D42"/>
                 <constraint firstItem="LEK-br-hrw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ww9-Fs-LSW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="2QS-Xq-ZHG" secondAttribute="bottom" id="xvz-4J-Qpi"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
 </document>

@@ -16,7 +16,7 @@ class StartViewController: UIViewController {
     var visualEffectView: UIVisualEffectView!
     
     private let cardHeight: CGFloat = 600
-    private let cardHandleAreaHeight: CGFloat = 80
+    private lazy var cardHandleAreaHeight: CGFloat = toastsViewController.handleView.frame.height
     
     private var cardState: CardState = .collapsed
     private var runningAnimations = [UIViewPropertyAnimator]()

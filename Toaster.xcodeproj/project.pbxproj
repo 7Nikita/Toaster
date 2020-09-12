@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1100A741250CD8FA00EB3528 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1100A740250CD8FA00EB3528 /* GoogleService-Info.plist */; };
+		1100A744250D199700EB3528 /* ToastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100A742250D199700EB3528 /* ToastTableViewCell.swift */; };
+		1100A745250D199700EB3528 /* ToastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1100A743250D199700EB3528 /* ToastTableViewCell.xib */; };
+		1100A748250D1F6200EB3528 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100A747250D1F6200EB3528 /* Toast.swift */; };
 		1109858A24FFF3D100C7B73F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109858924FFF3D100C7B73F /* AppDelegate.swift */; };
 		1109858C24FFF3D100C7B73F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109858B24FFF3D100C7B73F /* SceneDelegate.swift */; };
 		1109858E24FFF3D100C7B73F /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109858D24FFF3D100C7B73F /* StartViewController.swift */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		1100A740250CD8FA00EB3528 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1100A742250D199700EB3528 /* ToastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastTableViewCell.swift; sourceTree = "<group>"; };
+		1100A743250D199700EB3528 /* ToastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastTableViewCell.xib; sourceTree = "<group>"; };
+		1100A747250D1F6200EB3528 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		1109858624FFF3D100C7B73F /* Toaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1109858924FFF3D100C7B73F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1109858B24FFF3D100C7B73F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1100A746250D1F5500EB3528 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1100A747250D1F6200EB3528 /* Toast.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1109857D24FFF3D100C7B73F = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +91,7 @@
 		1109858824FFF3D100C7B73F /* Toaster */ = {
 			isa = PBXGroup;
 			children = (
+				1100A746250D1F5500EB3528 /* Models */,
 				1100A740250CD8FA00EB3528 /* GoogleService-Info.plist */,
 				11731B042508F22200AB9342 /* Views */,
 				11322FA02506339B005F78E6 /* Enums */,
@@ -104,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				11731B052508F24200AB9342 /* CircleView.swift */,
+				1100A742250D199700EB3528 /* ToastTableViewCell.swift */,
+				1100A743250D199700EB3528 /* ToastTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,7 +150,6 @@
 				4C5AE66087019C9A27DE1580 /* Pods-Toaster.debug.xcconfig */,
 				3DCC1880E3C04BDB497274AE /* Pods-Toaster.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,6 +226,7 @@
 				1100A741250CD8FA00EB3528 /* GoogleService-Info.plist in Resources */,
 				11322FA4250633F8005F78E6 /* ToastsViewController.xib in Resources */,
 				1109859124FFF3D100C7B73F /* Main.storyboard in Resources */,
+				1100A745250D199700EB3528 /* ToastTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +285,8 @@
 				1109858A24FFF3D100C7B73F /* AppDelegate.swift in Sources */,
 				11A261EE2500015C001C4AE1 /* UIView+Extensions.swift in Sources */,
 				1109858C24FFF3D100C7B73F /* SceneDelegate.swift in Sources */,
+				1100A744250D199700EB3528 /* ToastTableViewCell.swift in Sources */,
+				1100A748250D1F6200EB3528 /* Toast.swift in Sources */,
 				11322FA2250633AD005F78E6 /* CardState.swift in Sources */,
 				11788A7E2500F0FE0012D22C /* ToastsViewController.swift in Sources */,
 			);
