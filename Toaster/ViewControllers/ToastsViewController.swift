@@ -10,6 +10,8 @@ import UIKit
 
 class ToastsViewController: UIViewController {
 
+    
+    
     @IBOutlet weak var handleView: UIView! {
         didSet {
             handleView.roundCorners(top: true, cornerRadius: 30.0)
