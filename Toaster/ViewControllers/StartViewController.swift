@@ -11,19 +11,16 @@ import UIKit
 class StartViewController: UIViewController {
 
     @IBOutlet weak var randomToastView: CircleView!
-    
-    
+        
     var toastsViewController: ToastsViewController!
     var visualEffectView: UIVisualEffectView!
     
-    let cardHeight: CGFloat = 600
-    let cardHandleAreaHeight: CGFloat = 80
+    private let cardHeight: CGFloat = 600
+    private let cardHandleAreaHeight: CGFloat = 80
     
-    
-    var cardState: CardState = .collapsed
-    
-    var runningAnimations = [UIViewPropertyAnimator]()
-    var animationProgressWhenInterrupted: CGFloat = 0
+    private var cardState: CardState = .collapsed
+    private var runningAnimations = [UIViewPropertyAnimator]()
+    private var animationProgressWhenInterrupted: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
