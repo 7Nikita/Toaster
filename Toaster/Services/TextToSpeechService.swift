@@ -18,13 +18,16 @@ class TextToSpeechService {
     let language: Language
     let speechSynthesizer = AVSpeechSynthesizer()
     
-    init(language: Language) {
+    var utterance: AVSpeechUtterance
+    
+    init(language: Language, text: String) {
         self.language = language
+        self.utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: self.language.rawValue)
+
     }
     
-    func generateSynth(text: String) -> AVSpeechSynthesizer {
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: self.language.rawValue)
+    func generateSynth() -> AVSpeechSynthesizer {
         let synth = AVSpeechSynthesizer()
         return synth
     }
