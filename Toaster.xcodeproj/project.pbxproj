@@ -21,6 +21,7 @@
 		11322FA4250633F8005F78E6 /* ToastsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11322FA3250633F8005F78E6 /* ToastsViewController.xib */; };
 		11731B062508F24200AB9342 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11731B052508F24200AB9342 /* CircleView.swift */; };
 		11788A7E2500F0FE0012D22C /* ToastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11788A7D2500F0FE0012D22C /* ToastsViewController.swift */; };
+		117C6229250E772D006667CB /* TextToSpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C6228250E772D006667CB /* TextToSpeechService.swift */; };
 		117C63BE2503CB21005299AD /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C63BD2503CB21005299AD /* UIStoryboard+Extensions.swift */; };
 		11A261EE2500015C001C4AE1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A261ED2500015C001C4AE1 /* UIView+Extensions.swift */; };
 		1EB356F5EFBC47B5E4387BCC /* Pods_Toaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CDD49D3F612AE5C2831CA0 /* Pods_Toaster.framework */; };
@@ -43,6 +44,7 @@
 		11322FA3250633F8005F78E6 /* ToastsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastsViewController.xib; sourceTree = "<group>"; };
 		11731B052508F24200AB9342 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		11788A7D2500F0FE0012D22C /* ToastsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsViewController.swift; sourceTree = "<group>"; };
+		117C6228250E772D006667CB /* TextToSpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechService.swift; sourceTree = "<group>"; };
 		117C63BD2503CB21005299AD /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		11A261ED2500015C001C4AE1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3DCC1880E3C04BDB497274AE /* Pods-Toaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toaster.release.xcconfig"; path = "Target Support Files/Pods-Toaster/Pods-Toaster.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		1109858824FFF3D100C7B73F /* Toaster */ = {
 			isa = PBXGroup;
 			children = (
+				117C6227250E771B006667CB /* Services */,
 				1100A746250D1F5500EB3528 /* Models */,
 				1100A740250CD8FA00EB3528 /* GoogleService-Info.plist */,
 				11731B042508F22200AB9342 /* Views */,
@@ -123,6 +126,14 @@
 				1100A743250D199700EB3528 /* ToastTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		117C6227250E771B006667CB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				117C6228250E772D006667CB /* TextToSpeechService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		11A261EB2500008A001C4AE1 /* ViewControllers */ = {
@@ -279,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				117C6229250E772D006667CB /* TextToSpeechService.swift in Sources */,
 				11731B062508F24200AB9342 /* CircleView.swift in Sources */,
 				117C63BE2503CB21005299AD /* UIStoryboard+Extensions.swift in Sources */,
 				1109858E24FFF3D100C7B73F /* StartViewController.swift in Sources */,
