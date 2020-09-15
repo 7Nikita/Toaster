@@ -7,26 +7,50 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class StartViewController: UIViewController {
 
-    @IBOutlet weak var randomToastView: CircleView!
+    @IBOutlet weak var randomToastView: CircleView! {
+        didSet {
+            randomToastView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playRandomToast)))
+            randomToastView.isUserInteractionEnabled = true
+        }
+    }
         
     var toastsViewController: ToastsViewController!
     var visualEffectView: UIVisualEffectView!
     
+    private let database = Database.database().reference()
     private let cardHeight: CGFloat = 600
+    
     private lazy var cardHandleAreaHeight: CGFloat = toastsViewController.handleView.frame.height
     
     private var cardState: CardState = .collapsed
     private var runningAnimations = [UIViewPropertyAnimator]()
     private var animationProgressWhenInterrupted: CGFloat = 0
     
+    private var toasts = [Toast]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCard()
+        database.child("alco").observeSingleEvent(of: .value, with: { [weak self] snapshot in
+            let value = snapshot.value as? NSArray
+            if let value = value {
+                for content in value {
+                    let toast = Toast(content: content as? String ?? "")
+                    self?.toasts.append(toast)
+                }
+            }
+            self?.setupCard()
+        })
     }
 
+    @objc func playRandomToast() {
+        let toastContent = toasts.randomElement()?.content ?? "Нет доступных тостов"
+        let textToSpeechService = TextToSpeechService(language: .russian, text: toastContent)
+        textToSpeechService.generateSynth().speak(textToSpeechService.utterance)
+    }
     
     func setupCard() {
         visualEffectView = UIVisualEffectView()
@@ -34,6 +58,7 @@ class StartViewController: UIViewController {
         self.view.addSubview(visualEffectView)
         
         toastsViewController = ToastsViewController(nibName: "ToastsViewController", bundle: nil)
+        toastsViewController.toasts = self.toasts
         self.addChild(toastsViewController)
         self.view.addSubview(toastsViewController.view)
         
